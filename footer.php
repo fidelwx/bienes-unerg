@@ -6,6 +6,12 @@
 </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+       $('#example').DataTable();
+    } );
+    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->

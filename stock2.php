@@ -47,25 +47,42 @@
 				
 						
 				<div class="row">
-					<div class='col-md-4'>
-						<label>Filtrar por código o nombre</label>
-						<input type="text" class="form-control" id="q" placeholder="Código o nombre del producto" onkeyup='load(1);'>
-					</div>
-					
-					<div class='col-md-4'>
-						<label>Filtrar por categoría</label>
-						<select class='form-control' name='id_categoria' id='id_categoria' onchange="load(1);">
-							<option value="">Selecciona una categoría</option>
-							<?php 
-							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
-							while($rw=mysqli_fetch_array($query_categoria))	{
-								?>
-							<option value="<?php echo $rw['id_categoria'];?>"><?php echo $rw['nombre_categoria'];?></option>			
-								<?php
-							}
-							?>
+				<div class="col-md-2"></div>					
+					<div class='col-md-8 center'>
 						</select>
+						<table id="example">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Codigo</th>
+									<th>Nombre</th>
+									<th>Cantidad</th>
+									<th>Fecha de Adquisicion</th>
+									<th>Precio</th>
+									<th>Categoria</th>
+								</tr>
+							</thead>
+							<tbody>
+							<?php 
+							$query_producto=mysqli_query($con,"select * from products order by id_producto");
+							while($rw=mysqli_fetch_array($query_producto)):
+							?>
+								<tr>
+									<td><?php echo $rw['id_producto'];?></td>
+									<td><?php echo $rw['codigo_producto'];?></td>
+									<td><?php echo $rw['nombre_producto'];?></td>
+									<td><?php echo $rw['stock'];?></td>
+									<td><?php echo $rw['date_added'];?></td>
+									<td><?php echo $rw['precio_producto'];?></td>
+									<td><?php echo $rw['id_categoria'];?></td>
+								</tr>
+							<?php
+							endwhile;
+							?>
+							</tbody>
+						</table>
 					</div>
+				<div class="col-md-2"></div>					
 					<div class='col-md-12 text-center'>
 						<span id="loader"></span>
 					</div>

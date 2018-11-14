@@ -88,22 +88,9 @@
 					</div>
 				</div>
 				<hr>
-				<div class='row-fluid'>
-					<div id="resultados"></div><!-- Carga los datos ajax -->
-				</div>	
-				<div class='row'>
-					<div class='outer_div'></div><!-- Carga los datos ajax -->
-				</div>
 			</form>
-				
-			
-		
-	
-			
-			
-			
-  </div>
-</div>
+		  </div>
+		</div>
 		 
 	</div>
 	<hr>
@@ -139,7 +126,6 @@ function eliminar (id){
 			eliminar(<?php echo intval($_GET['delete'])?>);	
 		<?php
 			}
-		
 		?>	
 	});
 		

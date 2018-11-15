@@ -57,9 +57,9 @@
 									<th>Codigo</th>
 									<th>Nombre</th>
 									<th>Cantidad</th>
-									<th>Fecha de Adquisicion</th>
-									<th>Precio</th>
+									<th>Costo</th>
 									<th>Categoria</th>
+									<th>Fecha de Adquisicion</th>
 									<th>Acción</th>
 								</tr>
 							</thead>
@@ -72,9 +72,9 @@
 									<td><?php echo $rw['codigo_producto'];?></td>
 									<td><?php echo $rw['nombre_producto'];?></td>
 									<td><?php echo $rw['stock'];?></td>
-									<td><?php echo $rw['date_added'];?></td>
 									<td><?php echo $rw['precio_producto'];?></td>
 									<td><?php echo $rw['id_categoria'];?></td>
+									<td><?php echo $rw['date_added'];?></td>
 									<td>
 										<a href="<?='producto2.php?id=',$rw['id_producto'];?>">
 											Ver

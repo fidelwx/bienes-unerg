@@ -32,13 +32,12 @@
 						<table id="example" class="container">
 							<thead>
 								<tr>
-									<th>ID</th>
 									<th>Codigo</th>
-									<th>Nombre</th>
-									<th>Cantidad</th>
-									<th>Fecha de Adquisicion</th>
-									<th>Precio</th>
-									<th>Categoria</th>
+                                    <th>Nombre</th>
+                                    <th>Cantidad</th>
+                                    <th>Costo</th>
+                                    <th>Categoria</th>
+                                    <th>Fecha de Adquisicion</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -47,13 +46,12 @@
 							while($rw=mysqli_fetch_array($query_producto)):
 							?>
 								<tr>
-									<td><?php echo $rw['id_producto'];?></td>
 									<td><?php echo $rw['codigo_producto'];?></td>
 									<td><?php echo $rw['nombre_producto'];?></td>
 									<td><?php echo $rw['stock'];?></td>
+                                    <td><?php echo $rw['precio_producto'];?></td>
+                                    <td><?php echo $rw['id_categoria'];?></td>
 									<td><?php echo $rw['date_added'];?></td>
-									<td><?php echo $rw['precio_producto'];?></td>
-									<td><?php echo $rw['id_categoria'];?></td>
 								</tr>
 							<?php
 							endwhile;

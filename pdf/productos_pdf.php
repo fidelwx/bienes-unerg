@@ -29,7 +29,7 @@
 				<div class="row">
 					<div class='col-md-12'>
 						</select>
-						<table id="example">
+						<table id="example" class="container">
 							<thead>
 								<tr>
 									<th>ID</th>

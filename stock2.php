@@ -31,7 +31,9 @@
 	<div class="panel panel-info">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
+				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
+
+				<a href="lista_productos_pdf.php" target="_blanck" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF</a>
 			</div>
 			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
 		</div>
@@ -47,8 +49,8 @@
 				
 						
 				<div class="row">
-				<div class="col-md-2"></div>					
-					<div class='col-md-8 center'>
+				<div class="col-md-1"></div>					
+					<div class='col-md-10 center'>
 						</select>
 						<table id="example">
 							<thead>
@@ -60,6 +62,7 @@
 									<th>Fecha de Adquisicion</th>
 									<th>Precio</th>
 									<th>Categoria</th>
+									<th>Acción</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -75,6 +78,12 @@
 									<td><?php echo $rw['date_added'];?></td>
 									<td><?php echo $rw['precio_producto'];?></td>
 									<td><?php echo $rw['id_categoria'];?></td>
+									<td>
+										<a href="<?='producto2.php?id=',$rw['id_producto'];?>">
+											Ver
+										</a>
+											
+									</td>
 								</tr>
 							<?php
 							endwhile;
@@ -82,7 +91,7 @@
 							</tbody>
 						</table>
 					</div>
-				<div class="col-md-2"></div>					
+				<div class="col-md-1"></div>					
 					<div class='col-md-12 text-center'>
 						<span id="loader"></span>
 					</div>

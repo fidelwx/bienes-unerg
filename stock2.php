@@ -47,8 +47,8 @@
 				
 						
 				<div class="row">
-				<div class="col-md-2"></div>					
-					<div class='col-md-8 center'>
+				<div class="col-md-1"></div>					
+					<div class='col-md-10 center'>
 						</select>
 						<table id="example">
 							<thead>
@@ -60,6 +60,7 @@
 									<th>Fecha de Adquisicion</th>
 									<th>Precio</th>
 									<th>Categoria</th>
+									<th>Acción</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -75,6 +76,12 @@
 									<td><?php echo $rw['date_added'];?></td>
 									<td><?php echo $rw['precio_producto'];?></td>
 									<td><?php echo $rw['id_categoria'];?></td>
+									<td>
+										<a href="<?='producto2.php?id=',$rw['id_producto'];?>">
+											Ver
+										</a>
+											
+									</td>
 								</tr>
 							<?php
 							endwhile;
@@ -82,7 +89,7 @@
 							</tbody>
 						</table>
 					</div>
-				<div class="col-md-2"></div>					
+				<div class="col-md-1"></div>					
 					<div class='col-md-12 text-center'>
 						<span id="loader"></span>
 					</div>

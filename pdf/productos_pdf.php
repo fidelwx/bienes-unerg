@@ -37,7 +37,7 @@
                                     <th>Cantidad</th>
                                     <th>Costo</th>
                                     <th>Categoria</th>
-                                    <th>Fecha de Adquisicion</th>
+                                    <th>Fecha/Hora de Adquisicion</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -51,7 +51,7 @@
 									<td><?php echo $rw['stock'];?></td>
                                     <td><?php echo $rw['precio_producto'];?></td>
                                     <td><?php echo $rw['id_categoria'];?></td>
-									<td><?php echo $rw['date_added'];?></td>
+									<td>El <?php echo date('d/m/Y', strtotime($rw['date_added']));?> a las <?php echo date('H:i:s', strtotime($rw['date_added']));?></td>
 								</tr>
 							<?php
 							endwhile;

@@ -31,7 +31,9 @@
 	<div class="panel panel-info">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
+				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
+
+				<a href="lista_productos_pdf.php" target="_blanck" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF</a>
 			</div>
 			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
 		</div>

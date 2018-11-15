@@ -51,7 +51,8 @@
 									<td><?php echo $rw['stock'];?></td>
                                     <td><?php echo $rw['precio_producto'];?></td>
                                     <td><?php echo $rw['id_categoria'];?></td>
-									<td><?php echo $rw['date_added'];?></td>
+									<td><?php echo date('d/m/Y', strtotime($rw['date_added']));?>
+									</td>
 								</tr>
 							<?php
 							endwhile;

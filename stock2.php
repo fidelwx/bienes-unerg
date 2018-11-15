@@ -74,9 +74,10 @@
 									<td><?php echo $rw['stock'];?></td>
 									<td><?php echo $rw['precio_producto'];?></td>
 									<td><?php echo $rw['id_categoria'];?></td>
-									<td><?php echo $rw['date_added'];?></td>
+									<td><?php echo date('d/m/Y', strtotime($rw['date_added']));?>
+									</td>
 									<td>
-										<a href="<?='producto2.php?id=',$rw['id_producto'];?>">
+										<a class="label label-info" href="<?='producto2.php?id=',$rw['id_producto'];?>">
 											Ver
 										</a>
 									</td>

@@ -1,9 +1,9 @@
-<?php 
+<?php
 	require '../config/db.php';
 	require '../config/conexion.php';
  ?>
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">
   <head>
   	<!-- <link rel="stylesheet" href="DataTables/datatables.css"/> -->
   	<link rel="stylesheet" href="css/bootstrap.css">
@@ -19,14 +19,14 @@
   	}
 
   </style>
-  <body>	
+  <body>
 	<div class="panel panel-info">
 		<div class="panel-heading">
 			<h4>Bienes - UNERG</h4>
 		</div>
 		<div class="panel-body">
 			<form class="form-horizontal" role="form" id="datos">
-				<div class="row">					
+				<div class="row">
 					<div class='col-md-12'>
 						</select>
 						<table id="example">
@@ -42,7 +42,7 @@
 								</tr>
 							</thead>
 							<tbody>
-							<?php 
+							<?php
 							$query_producto=mysqli_query($con,"select * from products order by id_producto");
 							while($rw=mysqli_fetch_array($query_producto)):
 							?>
@@ -66,11 +66,9 @@
 			</form>
 		  </div>
 		</div>
-	</div>
-  </body>
-  <footer>
+    </div>
     <!-- <script src="DataTables/datatables.min.js"></script> -->
   	<script src="js/bootstrap.js" type="text/javascript"></script>
   	<!-- <script src="js/jquery.min.js"></script> -->
-  </footer>
+  </body>
 </html>

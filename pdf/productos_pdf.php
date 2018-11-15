@@ -20,16 +20,14 @@
 
   </style>
   <body>	
-    <div class="container">
 	<div class="panel panel-info">
 		<div class="panel-heading">
 			<h4>Bienes - UNERG</h4>
 		</div>
 		<div class="panel-body">
 			<form class="form-horizontal" role="form" id="datos">
-				<div class="row">
-				<div class="col-md-1"></div>					
-					<div class='col-md-10 center'>
+				<div class="row">					
+					<div class='col-md-12'>
 						</select>
 						<table id="example">
 							<thead>
@@ -63,14 +61,12 @@
 							</tbody>
 						</table>
 					</div>
-				<div class="col-md-1"></div>
 				</div>
 				<hr>
 			</form>
 		  </div>
 		</div>
 	</div>
-	<hr>
   </body>
   <footer>
     <!-- <script src="DataTables/datatables.min.js"></script> -->

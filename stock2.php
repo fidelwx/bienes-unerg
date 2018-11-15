@@ -54,7 +54,6 @@
 						<table id="example" class="container table">
 							<thead>
 								<tr>
-									<th>ID</th>
 									<th>Codigo</th>
 									<th>Nombre</th>
 									<th>Cantidad</th>
@@ -70,7 +69,6 @@
 							while($rw=mysqli_fetch_array($query_producto)):
 							?>
 								<tr>
-									<td><?php echo $rw['id_producto'];?></td>
 									<td><?php echo $rw['codigo_producto'];?></td>
 									<td><?php echo $rw['nombre_producto'];?></td>
 									<td><?php echo $rw['stock'];?></td>

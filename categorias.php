@@ -31,9 +31,9 @@
 	<div class="panel panel-info">
 		<div class="panel-heading">
 		    <div class="btn-group pull-right">
-				<button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nueva Categoría</button>
+				<button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoCliente"><span class="glyphicon glyphicon-plus" ></span> Nueva Dependencia</button>
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Buscar Categorías</h4>
+			<h4><i class='glyphicon glyphicon-search'></i> Buscar Dependencia</h4>
 		</div>
 		<div class="panel-body">
 		
@@ -63,12 +63,6 @@
 			</form>
 				<div id="resultados"></div><!-- Carga los datos ajax -->
 				<div class='outer_div'></div><!-- Carga los datos ajax -->
-			
-		
-	
-			
-			
-			
   </div>
 </div>
 		 

@@ -60,9 +60,9 @@
 			</div>
 
 			<div class="form-group">
-				<label for="img" class="col-sm-3 control-label">Stock</label>
+				<label for="img" class="col-sm-3 control-label"">Img</label>
 				<div class="col-sm-8">
-				  <input type="file" class="form-control" id="img" name="img" placeholder="Foto del Producto">
+				  <input type="file" class="form-control" id="img" name="img" placeholder="Foto del Producto" accept="image/*">
 				</div>
 			</div>
 

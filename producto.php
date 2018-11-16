@@ -74,8 +74,8 @@
 	include("navbar.php");
 	include("modal/agregar_stock.php");
 	include("modal/eliminar_stock.php");
+	include("modal/eliminar_producto_jhonny.php");
 	include("modal/editar_productos.php");
-	
 	?>
 	
 	<div class="container">
@@ -88,7 +88,9 @@
               <div class="col-sm-4 col-sm-offset-2 text-center">
 				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
 				  <br>
-                    <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
+
+                    <a href="#myModal3" data-toggle="modal" class="btn btn-danger" title="Editar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
+
 					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
 					
               </div>

@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-static-bottom" >
+<div class="navbar navbar-default navbar-fixed-bottom" >
     <div class="container">
       <p class="navbar-text pull-left">&copy <?php echo date('Y');?> Dirección de Informatica - UNERG<a href="http://obedalvarado.pw/" target="_blank" style="color: #ecf0f1"></a>
       </p>
@@ -42,6 +42,7 @@
         );
     } );
     </script>
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

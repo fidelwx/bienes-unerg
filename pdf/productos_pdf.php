@@ -29,7 +29,7 @@
 				<div class="row">
 					<div class='col-md-12'>
 						</select>
-						<table id="example" class="container">
+						<table id="example" class="container" style="font-size: 7">
 							<thead>
 								<tr>
 									<th>Codigo</th>

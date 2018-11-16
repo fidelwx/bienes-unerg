@@ -148,6 +148,12 @@ $( "#guardar_producto" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados_ajax_productos").html(datos);
 			$('#guardar_datos').attr("disabled", false);
+			$('#codigo').val('');
+			$('#nombre').val('');
+			$('#categoria').val('');
+			$('#precio').val('');
+			$('#stock').val('');
+			$('#img').val('');
 			load(1);
 		  }
 	});

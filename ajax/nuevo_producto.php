@@ -33,7 +33,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 
 	// Validacion de imagen
 
-	if ($_FILES['img']) {
+	if ($_FILES['img'] && isset($_FILES['img'])) {
 
 			if(!empty($_FILES["img"]["type"])){
 
@@ -58,13 +58,17 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 	        }
 	    }
 
-	}else{
-		$img = "Producto_imagen_default.jpg";
 	}
 
 	// Validacion de imagen
+
+	if (!isset($img) || empty($img)) {
+	    $img = "stock.png";		
+	}
+
+
+	$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria, img, datea) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria','$img','$datea')";
 		
-		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria, img, datea) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria','$img','$datea')";
 
 
 		$query_new_insert = mysqli_query($con,$sql);

@@ -11,7 +11,7 @@ function eliminar_producto($id_producto){
 	$eliminar=mysqli_query($con, $query);
 
 	if ($eliminar){
-				header('Location:'.$index.'stock2.php');
+				header('Location:'.$index.'stock.php');
 			return 1;
 	} else {
 		return 0;

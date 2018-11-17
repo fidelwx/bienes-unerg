@@ -77,7 +77,7 @@
 									<td><?php echo date('d/m/Y', strtotime($rw['date_added']));?>
 									</td>
 									<td>
-										<a class="label label-info" href="<?='producto2.php?id=',$rw['id_producto'];?>">
+										<a class="label label-info" href="<?='producto.php?id=',$rw['id_producto'];?>">
 											Ver
 										</a>
 									</td>

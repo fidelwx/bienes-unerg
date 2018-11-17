@@ -91,7 +91,7 @@
 
 				 src="img/foto_producto/<?php 
 				 	if($row['img']=='stock.png'){
-				 			echo "stock.png";
+				 			echo "../stock.png";
 				 		}else{
 				 			echo $row['img'];
 				 		}?>" 

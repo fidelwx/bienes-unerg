@@ -39,8 +39,6 @@
 		</div>
 		<div class="panel-body">
 
-
-
 			<?php
 			include("modal/registro_productos.php");
 			include("modal/editar_productos.php");
@@ -137,11 +135,14 @@ function eliminar (id){
 $( "#guardar_producto" ).submit(function( event ) {
   $('#guardar_datos').attr("disabled", true);
 
- var parametros = $(this).serialize();
+ var parametros = new FormData(this);
 	 $.ajax({
 			type: "POST",
 			url: "ajax/nuevo_producto.php",
 			data: parametros,
+			contentType: false,
+            cache: false,
+            processData:false,
 			 beforeSend: function(objeto){
 				$("#resultados_ajax_productos").html("Mensaje: Cargando...");
 			  },
@@ -158,6 +159,17 @@ $( "#guardar_producto" ).submit(function( event ) {
 		  }
 	});
   event.preventDefault();
-})
+  //file type validation
+    $("#img").change(function() {
+        var file = this.files[0];
+        var imagefile = file.type;
+        var match= ["image/jpeg","image/png","image/jpg"];
+        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
+            alert('Por favor selecciona una imagen con formatos: (JPEG/JPG/PNG).');
+            $("#img").val('');
+            return false;
+        }
+    });
+});
 
 </script>

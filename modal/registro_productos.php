@@ -60,19 +60,19 @@
 							</div>
 
 							<div class="form-group">
+								<label for="datea" class="col-sm-3 control-label"">Fecha</label>
+								<div class="date col-sm-8" id="datea" >
+								    <input type="date" name="datea" class="form-control">
+							    </div>
+							</div>
+							
+							<div class="form-group">
 								<label for="img" class="col-sm-3 control-label"">Foto de Producto</label>
 								<div class="col-sm-8">
-									<input type="file" class="form-control" id="img" name="img" placeholder="Foto del Producto" accept="image/*">
+									<input type="file" class="form-control" id="img" name="img" accept="image/*">
 								</div>
 							</div>
 
-
-							<div class="form-group">
-								<label for="img" class="col-sm-3 control-label"">Fecha</label>
-								<div class="date col-sm-8" id="date" >
-								<input type="date" class="form-control">
-							</div>
-							</div>
 
 						</div>
 						<div class="modal-footer">

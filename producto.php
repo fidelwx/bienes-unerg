@@ -86,7 +86,17 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				 <img 
+				 class="item-img img-responsive" 
+
+				 src="img/foto_producto/<?php 
+				 	if($row['img']=='stock.png'){
+				 			echo "stock.png";
+				 		}else{
+				 			echo $row['img'];
+				 		}?>" 
+
+				 alt=""> 
 				  <br>
 
                     <a href="#myModal3" data-toggle="modal" class="btn btn-danger" title="Editar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 

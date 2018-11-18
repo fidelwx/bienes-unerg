@@ -10,6 +10,8 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 			$errors[] = "Stock del producto vacío";
 		} else if (empty($_POST['precio'])){
 			$errors[] = "Precio de venta vacío";
+		} else if (empty($_POST['datea'])){
+			$errors[] = "Fecha esta vacío";
 		} else if (
 			!empty($_POST['codigo']) &&
 			!empty($_POST['nombre']) &&
@@ -27,8 +29,48 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$id_categoria=intval($_POST['categoria']);
 		$precio_venta=floatval($_POST['precio']);
 		$date_added=date("Y-m-d H:i:s");
+		$datea=$_POST['datea'];
+
+	// Validacion de imagen
+
+	if ($_FILES['img'] && isset($_FILES['img'])) {
+
+			if(!empty($_FILES["img"]["type"])){
+
+	        $fileName = time().'_'.$_FILES['img']['name'];
+
+	        $valid_extensions = array("jpeg", "jpg", "png");
+
+	        $temporary = explode(".", $_FILES["img"]["name"]);
+
+	        $file_extension = end($temporary);
+
+	        if((($_FILES["img"]["type"] == "image/png") || ($_FILES["img"]["type"] == "image/jpg") || ($_FILES["img"]["type"] == "image/jpeg")) && in_array($file_extension, $valid_extensions)){
+
+	            $sourcePath = $_FILES['img']['tmp_name'];
+
+	            $targetPath = "/foto_producto/".$fileName;
+
+	            if(move_uploaded_file($sourcePath, "../img".$targetPath)){
+
+	                $img = $fileName;
+	            }
+	        }
+	    }
+
+	}
+
+	// Validacion de imagen
+
+	if (!isset($img) || empty($img)) {
+	    $img = "stock.png";		
+	}
+
+
+	$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria, img, datea) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria','$img','$datea')";
 		
-		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria')";
+
+
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Producto ha sido ingresado satisfactoriamente.";

@@ -1,2 +1,2 @@
 # bienes-unerg
-Sistema de Bienes UNERG;
+Sistema de Bienes UNERG

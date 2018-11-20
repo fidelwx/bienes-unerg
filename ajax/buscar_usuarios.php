@@ -10,11 +10,17 @@
 	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
+
 	if (isset($_GET['id'])){
+
 		$user_id=intval($_GET['id']);
-		$query=mysqli_query($con, "select * from users where user_id='".$user_id."'");
+
+		$query=mysqli_query($con, "SELECT * FROM users WHERE user_id ='".$user_id."'");
+
 		$rw_user=mysqli_fetch_array($query);
+
 		$count=$rw_user['user_id'];
+
 		if ($user_id!=1){
 			if ($delete1=mysqli_query($con,"DELETE FROM users WHERE user_id='".$user_id."'")){
 			?>
@@ -30,7 +36,6 @@
 			  <strong>Error!</strong> Lo siento algo ha salido mal intenta nuevamente.
 			</div>
 			<?php
-			
 		}
 			
 		} else {
@@ -116,8 +121,12 @@
 						
 					<td ><span class="pull-right">
 					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
+
 					<a href="#" class='btn btn-default' title='Cambiar contraseña' onclick="get_user_id('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal3"><i class="glyphicon glyphicon-cog"></i></a>
-					<a href="#" class='btn btn-default' title='Borrar usuario' onclick="eliminar('<? echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+
+					<a href="#" data-toggle="modal"  class='btn btn-default' title='Borrar usuario' onclick="eliminar('<?php echo $user_id; ?>')"><i class="glyphicon glyphicon-trash"></i> </a></span></td>
+
+					<!-- data-target="#myModal4" -->
 						
 					</tr>
 					<?php

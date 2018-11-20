@@ -133,16 +133,14 @@
                     <div class="col-sm-12 margin-btm-10">
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
+                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#add-stock">Agregar Stock</a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#remove-stock">Eliminar Stock</a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
-                    
-                   
-                                    </div>
+                </div>
               </div>
             </div>
             <br>

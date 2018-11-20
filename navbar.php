@@ -12,7 +12,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand">BIENES | UNERG</a>
+      <a>
+        <img width="200" src="img/logo-bienes-unerg.png" alt="">
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

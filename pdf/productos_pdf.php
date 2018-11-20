@@ -11,18 +11,21 @@
   </head>
   <style>
   	th{
-  		padding: 10px;
+  		padding: 1px 1px;
   	}
 
   	td{
-  		padding: 10px;
+  		padding: 1px 1px;
   	}
 
   </style>
   <body>
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<h4>Bienes - UNERG</h4>
+			<p align="center" style="color: black; font-size: 10;">
+				Universidad Romulo Gallegos<br>
+				Bienes Nacionales no Depreciados por Dependencia
+			</p>
 		</div>
 		<div class="panel-body">
 			<form class="form-horizontal" role="form" id="datos">
@@ -37,7 +40,7 @@
                                     <th>Cantidad</th>
                                     <th>Costo</th>
                                     <th>Departamento</th>
-                                    <th>Fecha de Adquisicion</th>
+                                    <th>Fecha</th>
 								</tr>
 							</thead>
 							<tbody>

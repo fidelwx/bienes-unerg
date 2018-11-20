@@ -45,7 +45,9 @@
 		$firstname=$_SESSION['firstname'];
 		$nota="$firstname eliminó $quantity producto(s) del inventario";
 		$fecha=date("Y-m-d H:i:s");
+
 		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+		
 		$update=eliminar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
@@ -161,7 +163,7 @@
 							?>
 						<div class="alert alert-danger alert-dismissible" role="alert">
 						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>Error!</strong> No se pudo procesar los datos.
+						  <strong>Error!</strong> No se pudieron procesar los datos.
 						</div>	
 							<?php
 						}

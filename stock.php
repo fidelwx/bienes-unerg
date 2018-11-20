@@ -33,7 +33,7 @@
 		    <div class="btn-group pull-right">
 				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
 
-				<a href="lista_productos_pdf.php" target="_blanck" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF</a>
+				<a href="lista_productos_pdf.php" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF</a>
 			</div>
 			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
 		</div>
@@ -56,14 +56,15 @@
 									<th>Nombre</th>
 									<th>Cantidad</th>
 									<th>Costo</th>
-									<th>Categoria</th>
+									<th>Departamento</th>
 									<th>Fecha de Adquisicion</th>
 									<th>Acción</th>
 								</tr>
 							</thead>
 							<tbody>
 							<?php
-							$query_producto=mysqli_query($con,"select * from products order by id_producto");
+							// $query_producto=mysqli_query($con,"select codigo_producto from products order by id_producto");
+							$query_producto=mysqli_query($con,"SELECT codigo_producto, id_producto, nombre_producto, stock, precio_producto, categorias.nombre_categoria as categoria, products.date_added FROM products INNER JOIN categorias ON products.id_categoria = categorias.id_categoria");
 							while($rw=mysqli_fetch_array($query_producto)):
 							?>
 								<tr>
@@ -71,7 +72,7 @@
 									<td><?php echo $rw['nombre_producto'];?></td>
 									<td><?php echo $rw['stock'];?></td>
 									<td><?php echo $rw['precio_producto'];?></td>
-									<td><?php echo $rw['id_categoria'];?></td>
+									<td><?php echo $rw['categoria'];?></td>
 									<td><?php echo date('d/m/Y', strtotime($rw['date_added']));?>
 									</td>
 									<td>

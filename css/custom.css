@@ -4,7 +4,7 @@ http://work.smarchal.com/twbscolor/
 
 */
 .navbar-default {
-  background-color: #008;
+  background-color: #1B9CFC;
   border-color: #4caf50;
 }
 .navbar-default .navbar-brand {
@@ -28,23 +28,23 @@ http://work.smarchal.com/twbscolor/
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #e8f5e9;
-  background-color: #008;
+  background-color: #1B9CFC;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #e8f5e9;
-  background-color: #008;
+  background-color: #1B9CFC;
 }
 .navbar-default .navbar-toggle {
   border-color: #4caf50;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #008;
+  background-color: #1B9CFC;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #008;
+  background-color: #1B9CFC;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
@@ -69,7 +69,7 @@ http://work.smarchal.com/twbscolor/
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #e8f5e9;
-    background-color: #008;
+    background-color: #1B9CFC;
   }
 }
 
@@ -131,7 +131,7 @@ http://work.smarchal.com/twbscolor/
     z-index: 3;
     color: #fff;
     cursor: default;
-    background-color: #008;
+    background-color: #1B9CFC;
     border-color: #ccc;
 }
 a {

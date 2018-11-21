@@ -33,7 +33,7 @@ if ($login->isUserLoggedIn() == true) {
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Simple Stock | Login</title>
+  <title>BIENES/UNERG</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- CSS  -->
@@ -63,7 +63,7 @@ if ($login->isUserLoggedIn() == true) {
 					}
 					if ($login->messages) {
 						?>
-						<div class="alert alert-success alert-dismissible" role="alert">
+						<div class="alert alert-info alert-dismissible" role="alert">
 						    <strong>Aviso!</strong>
 						<?php
 						foreach ($login->messages as $message) {
@@ -78,7 +78,7 @@ if ($login->isUserLoggedIn() == true) {
                 <span id="reauth-email" class="reauth-email"></span>
                 <input class="form-control" placeholder="Usuario" name="user_name" type="text" value="" autofocus="" required>
                 <input class="form-control" placeholder="Contraseña" name="user_password" type="password" value="" autocomplete="off" required>
-                <button type="submit" class="btn btn-lg btn-success btn-block btn-signin" name="login" id="submit">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-lg btn-info btn-block btn-signin" name="login" id="submit">Iniciar Sesión</button>
             </form><!-- /form -->
             
         </div><!-- /card-container -->

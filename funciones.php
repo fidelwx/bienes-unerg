@@ -11,8 +11,6 @@ function guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quanti
 	$sql="INSERT INTO historial (id_historial, id_producto, user_id, fecha, nota, referencia, cantidad)
 	VALUES (NULL, '$id_producto', '$user_id', '$fecha', '$nota', '$reference', '$quantity');";
 	$query=mysqli_query($con,$sql);
-	
-	
 }
 function agregar_stock($id_producto,$quantity){
 	global $con;

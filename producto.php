@@ -45,7 +45,9 @@
 		$firstname=$_SESSION['firstname'];
 		$nota="$firstname eliminó $quantity producto(s) del inventario";
 		$fecha=date("Y-m-d H:i:s");
+
 		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+		
 		$update=eliminar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
@@ -116,31 +118,35 @@
                     <div class="col-sm-12 margin-btm-10">
                     </div>
                     <div class="col-sm-12">
-                      <span class="current-stock">Stock disponible</span>
+                      <span class="current-stock">Cantidad</span>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
-                      <span class="item-quantity"><?php echo number_format($row['stock'],2);?></span>
+                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
                     </div>
 					<div class="col-sm-12">
                       <span class="current-stock"> Precio de Adquisición  </span>
                     </div>
 					<div class="col-sm-12">
-                      <span class="item-price">$ <?php echo number_format($row['precio_producto'],2);?></span>
+                      <span class="item-price"><?php echo number_format($row['precio_producto'],2);?> Bs.S</span>
                     </div>
-					
                     <div class="col-sm-12 margin-btm-10">
+                    <span class="current-stock"></span>
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
+                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#add-stock">
+                      	<p>Agregar</p>
+                      	<img width="40" src="img/add.png">
+                      </a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#remove-stock">
+                      	<p>Quitar</p>
+                      	<img width="40" src="img/remove.png">
+                      </a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
-                    
-                   
-                                    </div>
+                </div>
               </div>
             </div>
             <br>
@@ -161,7 +167,7 @@
 							?>
 						<div class="alert alert-danger alert-dismissible" role="alert">
 						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>Error!</strong> No se pudo procesar los datos.
+						  <strong>Error!</strong> No se pudieron procesar los datos.
 						</div>	
 							<?php
 						}
@@ -186,7 +192,7 @@
 							<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
 							<td><?php echo $row['nota'];?></td>
 							<td><?php echo $row['referencia'];?></td>
-							<td class='text-center'><?php echo number_format($row['cantidad'],2);?></td>
+							<td class='text-center'><?php echo number_format($row['cantidad']);?></td>
 						</tr>		
 								<?php
 							}

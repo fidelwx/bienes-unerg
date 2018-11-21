@@ -38,6 +38,8 @@
 			include("modal/registro_usuarios.php");
 			include("modal/editar_usuarios.php");
 			include("modal/cambiar_password.php");
+			include("modal/eliminar_usuarios.php");
+
 			?>
 			<form class="form-horizontal" role="form" id="datos_cotizacion">
 				
@@ -156,4 +158,10 @@ $( "#editar_password" ).submit(function( event ) {
 			$("#user_email2").val(email);
 			
 		}
+
+
+function eliminar_usuario(){
+	alert("Ajaaa");
+}
+
 </script>

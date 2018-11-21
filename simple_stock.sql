@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2018 a las 19:10:38
+-- Tiempo de generación: 20-11-2018 a las 20:51:21
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.8
 
@@ -40,9 +40,9 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `date_added`) VALUES
-(1, 'Repuestos', 'Equipos para el hogar', '2016-12-19 00:00:00'),
-(4, 'Equipos', 'Equipos stihl', '2016-12-19 21:06:37'),
-(5, 'Accesorios', 'Accesorios stihl', '2016-12-19 21:06:39');
+(3, 'Area de Agronomia', '', '2018-11-20 19:19:08'),
+(4, 'Area de Medicina', '', '2018-11-20 19:19:18'),
+(2, 'Area de Informatica', '', '2018-11-20 19:18:51');
 
 -- --------------------------------------------------------
 
@@ -59,13 +59,6 @@ CREATE TABLE `historial` (
   `referencia` varchar(100) NOT NULL,
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `historial`
---
-
-INSERT INTO `historial` (`id_historial`, `id_producto`, `user_id`, `fecha`, `nota`, `referencia`, `cantidad`) VALUES
-(38, 39, 1, '2018-11-17 19:07:45', 'Jhonny agregÃ³ 100 producto(s) al inventario', '1!2\"3#4$', 100);
 
 -- --------------------------------------------------------
 
@@ -84,13 +77,6 @@ CREATE TABLE `products` (
   `img` varchar(100) NOT NULL DEFAULT 'stock.png',
   `datea` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `products`
---
-
-INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `date_added`, `precio_producto`, `stock`, `id_categoria`, `img`, `datea`) VALUES
-(39, '1!2\"3#4$', 'caja', '2018-11-17 19:07:45', 100, 100, 5, '1542478065_box3.png', '2016-11-30');
 
 -- --------------------------------------------------------
 
@@ -113,7 +99,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `date_added`) VALUES
-(1, 'Jhonny', 'Perez', 'admin', '$2y$10$MPVHzZ2ZPOWmtUUGCq3RXu31OTB.jo7M9LZ7PmPQYmgETSNn19ejO', 'admin@admin.com', '2016-12-19 15:06:00');
+(1, 'admin', 'admin', 'admin', '$2y$10$MPVHzZ2ZPOWmtUUGCq3RXu31OTB.jo7M9LZ7PmPQYmgETSNn19ejO', 'administrador@gmail.com', '2018-11-20 08:13:32');
 
 --
 -- Índices para tablas volcadas
@@ -155,25 +141,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

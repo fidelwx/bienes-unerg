@@ -64,7 +64,7 @@
 							<tbody>
 							<?php
 							// $query_producto=mysqli_query($con,"select codigo_producto from products order by id_producto");
-							$query_producto=mysqli_query($con,"SELECT codigo_producto, id_producto, nombre_producto, stock, precio_producto, categorias.nombre_categoria as categoria, products.date_added FROM products INNER JOIN categorias ON products.id_categoria = categorias.id_categoria");
+							$query_producto=mysqli_query($con,"SELECT codigo_producto, id_producto, nombre_producto, stock, precio_producto, categorias.nombre_categoria as categoria, products.datea FROM products INNER JOIN categorias ON products.id_categoria = categorias.id_categoria");
 							while($rw=mysqli_fetch_array($query_producto)):
 							?>
 								<tr>
@@ -73,7 +73,7 @@
 									<td><?php echo $rw['stock'];?></td>
 									<td><?php echo $rw['precio_producto'];?></td>
 									<td><?php echo $rw['categoria'];?></td>
-									<td><?php echo date('d/m/Y', strtotime($rw['date_added']));?>
+									<td><?php echo $rw['datea'];?>
 									</td>
 									<td>
 										<a class="label label-info" href="<?='producto.php?id=',$rw['id_producto'];?>">

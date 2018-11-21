@@ -11,11 +11,11 @@
   </head>
   <style>
   	th{
-  		padding: 1px 1px;
+  		padding: 1px 1px 4px 4px;
   	}
 
   	td{
-  		padding: 1px 1px;
+  		padding: 1px 1px 4px 4px;
   	}
 
   </style>

@@ -1,6 +1,6 @@
 <?php
 include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
-		
+
 	/*Inicia validacion del lado del servidor*/
 	if (empty($_POST['codigo'])) {
            $errors[] = "Código vacío";
@@ -37,7 +37,13 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 
 			if(!empty($_FILES["img"]["type"])){
 
-	        $fileName = time().'_'.$_FILES['img']['name'];
+			$fechactual = date("dHi");
+
+			$name = explode(".", $_FILES['img']['name']);
+
+			$extension = end($name);
+
+	        $fileName = "producto_".$fechactual.".".$extension;
 
 	        $valid_extensions = array("jpeg", "jpg", "png");
 
@@ -63,12 +69,12 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 	// Validacion de imagen
 
 	if (!isset($img) || empty($img)) {
-	    $img = "stock.png";		
+	    $img = "stock.png";
 	}
 
 
 	$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria, img, datea) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria','$img','$datea')";
-		
+
 
 
 		$query_new_insert = mysqli_query($con,$sql);
@@ -79,20 +85,20 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				$firstname=$_SESSION['firstname'];
 				$nota="$firstname agregó $stock producto(s) al inventario";
 				echo guardar_historial($id_producto,$user_id,$date_added,$nota,$codigo,$stock);
-				
+
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
 			}
 		} else {
 			$errors []= "Error desconocido.";
 		}
-		
+
 		if (isset($errors)){
-			
+
 			?>
 			<div class="alert alert-danger" role="alert">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>Error!</strong> 
+					<strong>Error!</strong>
 					<?php
 						foreach ($errors as $error) {
 								echo $error;
@@ -102,7 +108,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 			<?php
 			}
 			if (isset($messages)){
-				
+
 				?>
 				<div class="alert alert-success" role="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>

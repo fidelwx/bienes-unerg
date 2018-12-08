@@ -1,4 +1,9 @@
 <?php
+	/*-------------------------
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
+	---------------------------*/
 require_once('config/db.php');
 require_once('config/conexion.php');
 require_once('config/constante.php');

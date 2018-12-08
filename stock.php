@@ -1,8 +1,8 @@
 <?php
 	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
 	---------------------------*/
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
@@ -33,9 +33,28 @@
 		    <div class="btn-group pull-right">
 				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
 
-				<a href="lista_productos_pdf.php" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF</a>
+				<a href="lista_productos_pdf.php" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF <small>(Todos los bienes)</small></a>
+
+				<!-- <a href="lista_productos_area_pdf.php" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF <small>(Bienes por area)</small></a> -->
+
+				<div class="btn-group">
+				  <button type="button" class="btn btn-danger"></span> PDF <small>(Bienes por area)</small></button>
+				 
+				  <button type="button" class="btn btn-danger dropdown-toggle"
+				          data-toggle="dropdown">
+				    <span class="caret"></span>
+				    <span class="sr-only">Desplegar menú</span>
+				  </button>
+				 
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="#">Acción #1</a></li>
+				    <li><a href="#">Acción #2</a></li>
+				    <li><a href="#">Acción #3</a></li>
+				    <li><a href="#">Acción #4</a></li>
+				  </ul>
+				</div>
 			</div>
-			<h4><i class='glyphicon glyphicon-search'></i> Consultar inventario</h4>
+			<h4><i class='glyphicon glyphicon-search'> </i> Consultar inventario </h4>
 		</div>
 		<div class="panel-body">
 
@@ -157,20 +176,10 @@ $( "#guardar_producto" ).submit(function( event ) {
 			$('#stock').val('');
 			$('#img').val('');
 			load(1);
+
+			window.location.reload();
 		  }
 	});
   event.preventDefault();
-  //file type validation
-    $("#img").change(function() {
-        var file = this.files[0];
-        var imagefile = file.type;
-        var match= ["image/jpeg","image/png","image/jpg"];
-        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
-            alert('Por favor selecciona una imagen con formatos: (JPEG/JPG/PNG).');
-            $("#img").val('');
-            return false;
-        }
-    });
 });
-
 </script>

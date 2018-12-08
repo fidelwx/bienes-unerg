@@ -1,4 +1,9 @@
-<?php 
+<?php
+	/*-------------------------
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
+	---------------------------*/ 
 function get_row($table,$row, $id, $equal){
 	global $con;
 	$query=mysqli_query($con,"select $row from $table where $id='$equal'");

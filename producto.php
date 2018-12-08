@@ -1,8 +1,8 @@
 <?php
 	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
 	---------------------------*/
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
@@ -174,13 +174,13 @@
 					?>	
 					 <table class='table table-bordered'>
 						<tr>
-							<th class='text-center' colspan=5 >HISTORIAL DE INVENTARIO</th>
+							<th class='text-center' colspan=5 > HISTORIAL DE PRODUCTO </th>
 						</tr>
 						<tr>
 							<td>Fecha</td>
 							<td>Hora</td>
 							<td>Descripción</td>
-							<td>Referencia</td>
+							<td>Codigo</td>
 							<td class='text-center'>Total</td>
 						</tr>
 						<?php
@@ -197,6 +197,7 @@
 								<?php
 							}
 						?>
+						<a target="_blank" href="<?='producto_historial_pdf.php?id=',$id_producto ?>" class="btn btn-warning pull-right">PDF</a>
 					 </table>
                   </div>
                                     

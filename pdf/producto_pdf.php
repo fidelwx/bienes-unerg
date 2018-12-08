@@ -1,4 +1,9 @@
 <?php
+	/*-------------------------
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
+	---------------------------*/
 	require '../config/db.php';
 	require '../config/conexion.php';
 	extract($_GET);

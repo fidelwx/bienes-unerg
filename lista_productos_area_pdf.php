@@ -16,11 +16,11 @@
 	// instantiate and use the dompdf class
 	$dompdf = new Dompdf();
 
-	$dompdf->load_html( file_get_contents( $index.'pdf/productos_pdf.php' ) );
+	$dompdf->load_html( file_get_contents( $index.'pdf/productos_area_pdf.php' ) );
 	$dompdf->setPaper('A4', 'portrait');
 	
 	$dompdf->render();
 	$dia_hora = date('d-m-Y');
-	$dompdf->stream("lista_bienes_unerg_".$dia_hora);
+	$dompdf->stream("lista_bienes_area_unerg_".$dia_hora);
 
  ?>

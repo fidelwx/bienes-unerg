@@ -1,4 +1,9 @@
-<?php 
+<?php
+	/*-------------------------
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
+	---------------------------*/ 
 	require 'vendor/autoload.php';
 	require 'config/constante.php';
 	use Dompdf\Dompdf;

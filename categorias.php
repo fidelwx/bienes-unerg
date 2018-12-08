@@ -1,8 +1,8 @@
 <?php
 	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
 	---------------------------*/
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {

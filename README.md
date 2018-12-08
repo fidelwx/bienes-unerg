@@ -1,3 +1,7 @@
 # bienes-unerg
 Sistema de Bienes UNERG
-Rama Master
+	/*-------------------------
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
+	---------------------------*/

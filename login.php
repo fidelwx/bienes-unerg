@@ -1,4 +1,9 @@
 <?php
+	/*-------------------------
+	Autor: Direccion de informatica Unerg 2018
+	Jhonny Perez;
+	Fidel Herrera;
+	---------------------------*/
 // checking for minimum PHP version
 if (version_compare(PHP_VERSION, '5.3.7', '<')) {
     exit("Sorry, Simple PHP Login does not run on a PHP version smaller than 5.3.7 !");

@@ -174,13 +174,13 @@
 					?>	
 					 <table class='table table-bordered'>
 						<tr>
-							<th class='text-center' colspan=5 >HISTORIAL DE INVENTARIO</th>
+							<th class='text-center' colspan=5 > HISTORIAL DE PRODUCTO </th>
 						</tr>
 						<tr>
 							<td>Fecha</td>
 							<td>Hora</td>
 							<td>Descripción</td>
-							<td>Referencia</td>
+							<td>Codigo</td>
 							<td class='text-center'>Total</td>
 						</tr>
 						<?php
@@ -197,6 +197,7 @@
 								<?php
 							}
 						?>
+						<a target="_blank" href="<?='producto_historial_pdf.php?id=',$id_producto ?>" class="btn btn-warning pull-right">PDF</a>
 					 </table>
                   </div>
                                     

@@ -157,20 +157,10 @@ $( "#guardar_producto" ).submit(function( event ) {
 			$('#stock').val('');
 			$('#img').val('');
 			load(1);
+
+			window.location.reload();
 		  }
 	});
   event.preventDefault();
-  //file type validation
-    $("#img").change(function() {
-        var file = this.files[0];
-        var imagefile = file.type;
-        var match= ["image/jpeg","image/png","image/jpg"];
-        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
-            alert('Por favor selecciona una imagen con formatos: (JPEG/JPG/PNG).');
-            $("#img").val('');
-            return false;
-        }
-    });
 });
-
 </script>

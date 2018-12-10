@@ -25,7 +25,6 @@ function agregar_stock($id_producto,$quantity){
 	} else {
 		return 0;
 	}	
-		
 }
 function eliminar_stock($id_producto,$quantity){
 	global $con;

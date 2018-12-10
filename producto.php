@@ -27,8 +27,11 @@
 		$user_id=$_SESSION['user_id'];
 		$firstname=$_SESSION['firstname'];
 		$nota="$firstname agregó $quantity producto(s) al inventario";
+
 		$fecha=date("Y-m-d H:i:s");
+
 		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+
 		$update=agregar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;
@@ -82,137 +85,128 @@
 	
 	<div class="container">
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img 
-				 class="item-img img-responsive" 
+	<div class="row">
+	    <div class="col-md-12">
+	        <div class="panel panel-default">
+	          <div class="panel-body">
+	            <div class="row">
+	              <div class="col-sm-4 col-sm-offset-2 text-center">
+					 <img 
+					 class="item-img img-responsive" 
 
-				 src="img/foto_producto/<?php 
-				 	if($row['img']=='stock.png'){
-				 			echo "../stock.png";
-				 		}else{
-				 			echo $row['img'];
-				 		}?>" 
+					 src="img/foto_producto/<?php 
+					 	if($row['img']=='stock.png'){
+					 			echo "../stock.png";
+					 		}else{
+					 			echo $row['img'];
+					 		}?>" 
 
-				 alt=""> 
-				  <br>
+					 alt=""> 
+					  <br>
+	                    <a href="#myModal3" data-toggle="modal" class="btn btn-danger" title="Editar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
 
-                    <a href="#myModal3" data-toggle="modal" class="btn btn-danger" title="Editar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
+						<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+	              </div>
+	              <div class="col-sm-4 text-left">
+	                <div class="row margin-btm-20">
+	                    <div class="col-sm-12">
+	                      <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
+	                    </div>
+	                    <div class="col-sm-12 margin-btm-10">
+	                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
+	                    </div>
+	                    <div class="col-sm-12 margin-btm-10">
+	                    </div>
+	                    <div class="col-sm-12">
+	                      <span class="current-stock">Cantidad</span>
+	                    </div>
+	                    <div class="col-sm-12 margin-btm-10">
+	                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
+	                    </div>
+						<div class="col-sm-12">
+	                      <span class="current-stock"> Precio de Adquisición  </span>
+	                    </div>
+						<div class="col-sm-12">
+	                      <span class="item-price"><?php echo number_format($row['precio_producto'],2);?> Bs.S</span>
+	                    </div>
+	                    <div class="col-sm-12 margin-btm-10">
+	                    <span class="current-stock"></span>
+						</div>
+	                    <div class="col-sm-6 col-xs-6 col-md-4 ">
+	                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#add-stock">
+	                      	<p>Agregar</p>
+	                      	<img width="40" src="img/add.png">
+	                      </a>
+	                    </div>
+	                    <div class="col-sm-6 col-xs-6 col-md-4">
+	                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#remove-stock">
+	                      	<p>Quitar</p>
+	                      	<img width="40" src="img/remove.png">
+	                      </a>
+	                    </div>
+	                    <div class="col-sm-12 margin-btm-10">
+	                    </div>
+	                </div>
+	              </div>
+	            </div>
+	            <br>
+	            <div class="row">
 
-					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
-					
-              </div>
-			  
-              <div class="col-sm-4 text-left">
-                <div class="row margin-btm-20">
-                    <div class="col-sm-12">
-                      <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                    </div>
-                    <div class="col-sm-12">
-                      <span class="current-stock">Cantidad</span>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
-                    </div>
-					<div class="col-sm-12">
-                      <span class="current-stock"> Precio de Adquisición  </span>
-                    </div>
-					<div class="col-sm-12">
-                      <span class="item-price"><?php echo number_format($row['precio_producto'],2);?> Bs.S</span>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                    <span class="current-stock"></span>
-					</div>
-                    <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#add-stock">
-                      	<p>Agregar</p>
-                      	<img width="40" src="img/add.png">
-                      </a>
-                    </div>
-                    <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#remove-stock">
-                      	<p>Quitar</p>
-                      	<img width="40" src="img/remove.png">
-                      </a>
-                    </div>
-                    <div class="col-sm-12 margin-btm-10">
-                    </div>
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="row">
-
-            <div class="col-sm-8 col-sm-offset-2 text-left">
-                  <div class="row">
-                    <?php
-						if (isset($message)){
-							?>
-						<div class="alert alert-success alert-dismissible" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>Aviso!</strong> Datos procesados exitosamente.
-						</div>	
-							<?php
-						}
-						if (isset($error)){
-							?>
-						<div class="alert alert-danger alert-dismissible" role="alert">
-						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong>Error!</strong> No se pudieron procesar los datos.
-						</div>	
-							<?php
-						}
-					?>	
-					 <table class='table table-bordered'>
-						<tr>
-							<th class='text-center' colspan=5 > HISTORIAL DE PRODUCTO </th>
-						</tr>
-						<tr>
-							<td>Fecha</td>
-							<td>Hora</td>
-							<td>Descripción</td>
-							<td>Codigo</td>
-							<td class='text-center'>Total</td>
-						</tr>
-						<?php
-							$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
-							while ($row=mysqli_fetch_array($query)){
+	            <div class="col-sm-8 col-sm-offset-2 text-left">
+	                  <div class="row">
+	                    <?php
+							if (isset($message)){
 								?>
-						<tr>
-							<td><?php echo date('d/m/Y', strtotime($row['fecha']));?></td>
-							<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
-							<td><?php echo $row['nota'];?></td>
-							<td><?php echo $row['referencia'];?></td>
-							<td class='text-center'><?php echo number_format($row['cantidad']);?></td>
-						</tr>		
+							<div class="alert alert-success alert-dismissible" role="alert">
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  <strong>Aviso!</strong> Datos procesados exitosamente.
+							</div>	
 								<?php
 							}
-						?>
-						<a target="_blank" href="<?='producto_historial_pdf.php?id=',$id_producto ?>" class="btn btn-warning pull-right">PDF</a>
-					 </table>
-                  </div>
-                                    
-                                    
-				</div>
-            </div>
-          </div>
-        </div>
-    </div>
+							if (isset($error)){
+								?>
+							<div class="alert alert-danger alert-dismissible" role="alert">
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  <strong>Error!</strong> No se pudieron procesar los datos.
+							</div>	
+								<?php
+							}
+						?>	
+						 <table class='table table-bordered'>
+							<tr>
+								<th class='text-center' colspan=5 > HISTORIAL DE PRODUCTO </th>
+							</tr>
+							<tr>
+								<td>Fecha</td>
+								<td>Hora</td>
+								<td>Descripción</td>
+								<td>Codigo</td>
+								<td class='text-center'>Total</td>
+							</tr>
+							<?php
+								$query=mysqli_query($con,"select * from historial where id_producto='$id_producto'");
+								while ($row=mysqli_fetch_array($query)){
+									?>
+							<tr>
+								<td><?php echo date('d/m/Y', strtotime($row['fecha']));?></td>
+								<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
+								<td><?php echo $row['nota'];?></td>
+								<td><?php echo $row['referencia'];?></td>
+								<td class='text-center'><?php echo number_format($row['cantidad']);?></td>
+							</tr>		
+									<?php
+								}
+							?>
+							<a target="_blank" href="<?='producto_historial_pdf.php?id=',$id_producto ?>" class="btn btn-warning pull-right">PDF</a>
+						 </table>
+	                  </div>             
+					</div>
+	            </div>
+	          </div>
+	        </div>
+	    </div>
+	</div>
 </div>
-
-
-
-</div>
-
 	
 	<?php
 	include("footer.php");
@@ -233,17 +227,43 @@ $( "#editar_producto" ).submit(function( event ) {
 				$("#resultados_ajax2").html("Mensaje: Cargando...");
 			  },
 			success: function(datos){
+
 			$("#resultados_ajax2").html(datos);
 			$('#actualizar_datos').attr("disabled", false);
+
 			window.setTimeout(function() {
 				$(".alert").fadeTo(500, 0).slideUp(500, function(){
 				$(this).remove();});
 				location.replace('stock.php');
 			}, 4000);
-		  }
+		}
 	});
-  event.preventDefault();
+  	event.preventDefault();
+	window.location.reload();
+
 })
+
+// Cambios de jhonny
+
+$(document).ready(function(){
+	$("select[name=mod_categoria]").change(function(){
+			console.log('Tocaste el select');
+	});
+});
+		// <?php 
+		// 	// Flechas a ver si acomodo el historial 
+		// 	$id_producto=intval($_GET['id']);
+		// 	$user_id=$_SESSION['user_id'];
+		// 	$firstname=$_SESSION['firstname'];
+		// 	$notax="$firstname cambio la dependencia del producto";
+		// 	$quantity=intval($_POST['quantity_remove']);
+		// 	$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference_remove"],ENT_QUOTES)));
+
+		// 	$fecha=date("Y-m-d H:i:s");
+		// 	guardar_historial($id_producto,$user_id,$fecha,$notax,$reference,$quantity);
+		//  ?>
+
+// Cambios de jhonny
 
 	$('#myModal2').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
@@ -268,4 +288,5 @@ $( "#editar_producto" ).submit(function( event ) {
 			location.replace('stock.php?delete='+id);
 		}
 	}
+
 </script>

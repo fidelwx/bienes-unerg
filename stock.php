@@ -9,7 +9,6 @@
         header("location: login.php");
 		exit;
         }
-
 	/* Connect To Database*/
 	require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
@@ -176,7 +175,6 @@ $( "#guardar_producto" ).submit(function( event ) {
 			$('#stock').val('');
 			$('#img').val('');
 			load(1);
-
 			window.location.reload();
 		  }
 	});

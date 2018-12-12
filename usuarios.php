@@ -96,6 +96,8 @@ $( "#guardar_usuario" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados_ajax").html(datos);
 			$('#guardar_datos').attr("disabled", false);
+			window.location.reload();
+			
 			load(1);
 		  }
 	});
@@ -116,6 +118,8 @@ $( "#editar_usuario" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados_ajax2").html(datos);
 			$('#actualizar_datos2').attr("disabled", false);
+			window.location.reload();
+
 			load(1);
 		  }
 	});
@@ -136,6 +140,8 @@ $( "#editar_password" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados_ajax3").html(datos);
 			$('#actualizar_datos3').attr("disabled", false);
+			window.location.reload();
+
 			load(1);
 		  }
 	});
@@ -158,10 +164,5 @@ $( "#editar_password" ).submit(function( event ) {
 			$("#user_email2").val(email);
 			
 		}
-
-
-function eliminar_usuario(){
-	alert("Ajaaa");
-}
 
 </script>

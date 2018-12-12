@@ -135,16 +135,16 @@
                     <div class="col-sm-12 margin-btm-10">
                     <span class="current-stock"></span>
 					</div>
-                    <div class="col-sm-6 col-xs-6 col-md-4 ">
+                    <div class="col-sm-6 col-xs-6 col-md-4">
                       <a href="" class="btn btn-info" data-toggle="modal" data-target="#add-stock">
                       	<p>Agregar</p>
-                      	<img width="40" src="img/add.png">
+                      	<img style=" height: 40px; width: 60px;" src="img/add.png">
                       </a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
                       <a href="" class="btn btn-info" data-toggle="modal" data-target="#remove-stock">
                       	<p>Quitar</p>
-                      	<img width="40" src="img/remove.png">
+                      	<img style=" height: 40px; width: 60px;" src="img/remove.png">
                       </a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
@@ -238,11 +238,12 @@ $( "#editar_producto" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados_ajax2").html(datos);
 			$('#actualizar_datos').attr("disabled", false);
-			window.setTimeout(function() {
-				$(".alert").fadeTo(500, 0).slideUp(500, function(){
-				$(this).remove();});
-				location.replace('stock.php');
-			}, 4000);
+			window.location.reload();
+			// window.setTimeout(function() {
+			// 	$(".alert").fadeTo(500, 0).slideUp(500, function(){
+			// 	$(this).remove();});
+			// 	location.replace('stock.php');
+			// }, 4000);
 		  }
 	});
   event.preventDefault();

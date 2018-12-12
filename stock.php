@@ -34,25 +34,6 @@
 				<button type='button' class="btn btn-success" data-toggle="modal" data-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
 
 				<a href="lista_productos_pdf.php" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF <small>(Todos los bienes)</small></a>
-
-				<!-- <a href="lista_productos_area_pdf.php" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF <small>(Bienes por area)</small></a> -->
-
-				<!-- <div class="btn-group">
-				  <button type="button" class="btn btn-danger"></span> PDF <small>(Bienes por area)</small></button>
-				 
-				  <button type="button" class="btn btn-danger dropdown-toggle"
-				          data-toggle="dropdown">
-				    <span class="caret"></span>
-				    <span class="sr-only">Desplegar menú</span>
-				  </button>
-				 
-				  <ul class="dropdown-menu" role="menu">
-				    <li><a href="#">Acción #1</a></li>
-				    <li><a href="#">Acción #2</a></li>
-				    <li><a href="#">Acción #3</a></li>
-				    <li><a href="#">Acción #4</a></li>
-				  </ul>
-				</div> -->
 				
 			</div>
 			<h4><i class='glyphicon glyphicon-search'> </i> Consultar inventario </h4>

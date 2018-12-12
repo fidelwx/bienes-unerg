@@ -105,8 +105,12 @@
 						<td><?php echo $date_added;?></td>
 						
 					<td class='text-right'>
-						<a href="#" class='btn btn-default' title='Editar categoría' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
-						<a href="#" class='btn btn-default' title='Borrar categoría' onclick="eliminar('<?php echo $id_categoria; ?>')"><i class="glyphicon glyphicon-trash"></i> </a>
+						<a href="#" class='btn btn-default' title='Editar dependencia' data-nombre='<?php echo $nombre_categoria;?>' data-descripcion='<?php echo $descripcion_categoria?>' data-id='<?php echo $id_categoria;?>' data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
+
+						<a href="#" class='btn btn-default' title='Borrar dependencia' onclick="eliminar('<?php echo $id_categoria; ?>')"><i class="glyphicon glyphicon-trash"></i> </a>
+
+						<a href="<?='producto_dependencia_pdf.php?id=',$id_categoria ?>" class='btn btn-default' title='PDF dependencia'><i class="glyphicon glyphicon-pdf">PDF</i> </a>
+
 					</td>
 						
 					</tr>

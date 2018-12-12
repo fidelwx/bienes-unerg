@@ -29,10 +29,10 @@
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="mod_categoria" class="col-sm-3 control-label">Categoría</label>
+				<label for="mod_categoria" class="col-sm-3 control-label">Dependencia</label>
 				<div class="col-sm-8">
 					<select class='form-control' name='mod_categoria' id='mod_categoria' required>
-						<option value="">Selecciona una categoría</option>
+						<option value="">Selecciona una dependencia</option>
 							<?php 
 							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
 							while($rw=mysqli_fetch_array($query_categoria))	{
@@ -53,7 +53,7 @@
 			  </div>
 			 
 			 <div class="form-group">
-				<label for="mod_stock" class="col-sm-3 control-label">Stock</label>
+				<label for="mod_stock" class="col-sm-3 control-label">Cantidad</label>
 				<div class="col-sm-8">
 				  <input type="number" min="0" class="form-control" id="mod_stock" name="mod_stock" placeholder="Inventario inicial" required  maxlength="8" readonly>
 				</div>

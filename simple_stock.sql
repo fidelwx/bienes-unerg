@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2018 a las 20:51:21
--- Versión del servidor: 10.1.34-MariaDB
--- Versión de PHP: 7.2.8
+-- Tiempo de generación: 12-12-2018 a las 08:44:25
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,9 +40,9 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `date_added`) VALUES
-(3, 'Area de Agronomia', '', '2018-11-20 19:19:08'),
 (4, 'Area de Medicina', '', '2018-11-20 19:19:18'),
-(2, 'Area de Informatica', '', '2018-11-20 19:18:51');
+(2, 'Area de Informatica', '', '2018-11-20 19:18:51'),
+(5, 'Area de Rectorado', '', '2018-12-12 07:56:30');
 
 -- --------------------------------------------------------
 
@@ -59,6 +59,15 @@ CREATE TABLE `historial` (
   `referencia` varchar(100) NOT NULL,
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `historial`
+--
+
+INSERT INTO `historial` (`id_historial`, `id_producto`, `user_id`, `fecha`, `nota`, `referencia`, `cantidad`) VALUES
+(59, 3, 2, '2018-12-12 07:51:12', 'Jhonny agregÃ³ 1 producto(s) al inventario', '55555', 1),
+(60, 3, 2, '2018-12-12 07:51:28', 'Jhonny cambio el departamento a Area de Medicina', '55555', 1),
+(61, 3, 2, '2018-12-12 08:43:13', 'Jhonny cambio el departamento a Area de Informatica', '55555', 1);
 
 -- --------------------------------------------------------
 
@@ -77,6 +86,13 @@ CREATE TABLE `products` (
   `img` varchar(100) NOT NULL DEFAULT 'stock.png',
   `datea` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `date_added`, `precio_producto`, `stock`, `id_categoria`, `img`, `datea`) VALUES
+(3, '55555', ':v', '2018-12-12 07:51:12', 10000, 1, 2, 'producto_120751.png', '2018-12-01');
 
 -- --------------------------------------------------------
 
@@ -99,7 +115,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `date_added`) VALUES
-(1, 'admin', 'admin', 'admin', '$2y$10$MPVHzZ2ZPOWmtUUGCq3RXu31OTB.jo7M9LZ7PmPQYmgETSNn19ejO', 'administrador@gmail.com', '2018-11-20 08:13:32');
+(1, 'admin', 'admin', 'admin', '$2y$10$MPVHzZ2ZPOWmtUUGCq3RXu31OTB.jo7M9LZ7PmPQYmgETSNn19ejO', 'administrador@gmail.com', '2018-11-20 08:13:32'),
+(2, 'Jhonny', 'Perez', 'Jhonny', '$2y$10$M8xd/GcwhRWiNHHaeLLWnuUauCOBaNvm5MmXZw43pS4cfjXAwTpd2', 'jhonnyjose1998@gmail.com', '2018-12-12 07:13:23'),
+(4, 'Jhonny', 'Perez', 'ada', '$2y$10$hgm8gXJB6FXszZd6Qj4u2O0uDA4S6tIQtshUyH7Augl0Rd494.FqG', 'jhonnyjose1998ii@gmail.com', '2018-12-12 07:55:04'),
+(5, 'Jhonny', 'Perez', 'adakdjalkj', '$2y$10$IMuKuEMGcD52q.epWO/a8eNn47t9wqvY6ORn/EyNuuRMha87xzHGy', 'jhonnyjose1998idi@gmail.com', '2018-12-12 07:56:04');
 
 --
 -- Índices para tablas volcadas
@@ -141,25 +160,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `historial`
 --
 ALTER TABLE `historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

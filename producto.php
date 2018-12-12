@@ -61,7 +61,7 @@
 	
 	if (isset($_GET['id'])){
 		$id_producto=intval($_GET['id']);
-		$query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
+		$query=mysqli_query($con,"SELECT * FROM products JOIN categorias ON products.id_categoria =  categorias.id_categoria where id_producto='$id_producto'");
 		$row=mysqli_fetch_array($query);
 		
 	} else {
@@ -105,52 +105,59 @@
 					  <br>
 	                    <a href="#myModal3" data-toggle="modal" class="btn btn-danger" title="Editar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
 
-						<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
-	              </div>
-	              <div class="col-sm-4 text-left">
-	                <div class="row margin-btm-20">
-	                    <div class="col-sm-12">
-	                      <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
-	                    </div>
-	                    <div class="col-sm-12 margin-btm-10">
-	                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
-	                    </div>
-	                    <div class="col-sm-12 margin-btm-10">
-	                    </div>
-	                    <div class="col-sm-12">
-	                      <span class="current-stock">Cantidad</span>
-	                    </div>
-	                    <div class="col-sm-12 margin-btm-10">
-	                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
-	                    </div>
-						<div class="col-sm-12">
-	                      <span class="current-stock"> Precio de Adquisición  </span>
-	                    </div>
-						<div class="col-sm-12">
-	                      <span class="item-price"><?php echo number_format($row['precio_producto'],2);?> Bs.S</span>
-	                    </div>
-	                    <div class="col-sm-12 margin-btm-10">
-	                    <span class="current-stock"></span>
-						</div>
-	                    <div class="col-sm-6 col-xs-6 col-md-4 ">
-	                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#add-stock">
-	                      	<p>Agregar</p>
-	                      	<img width="40" src="img/add.png">
-	                      </a>
-	                    </div>
-	                    <div class="col-sm-6 col-xs-6 col-md-4">
-	                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#remove-stock">
-	                      	<p>Quitar</p>
-	                      	<img width="40" src="img/remove.png">
-	                      </a>
-	                    </div>
-	                    <div class="col-sm-12 margin-btm-10">
-	                    </div>
-	                </div>
-	              </div>
-	            </div>
-	            <br>
-	            <div class="row">
+
+					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
+					
+              </div>
+			  
+              <div class="col-sm-4 text-left">
+                <div class="row margin-btm-20">
+                    <div class="col-sm-12">
+                      <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-title"><?php echo $row['nombre_categoria'];?></span>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                    </div>
+                    <div class="col-sm-12">
+                      <span class="current-stock">Cantidad</span>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-quantity"><?php echo number_format($row['stock']);?></span>
+                    </div>
+					<div class="col-sm-12">
+                      <span class="current-stock"> Precio de Adquisición  </span>
+                    </div>
+					<div class="col-sm-12">
+                      <span class="item-price"><?php echo number_format($row['precio_producto'],2);?> Bs.S</span>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                    <span class="current-stock"></span>
+					</div>
+                    <div class="col-sm-6 col-xs-6 col-md-4">
+                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#add-stock">
+                      	<p>Agregar</p>
+                      	<img style=" height: 40px; width: 60px;" src="img/add.png">
+                      </a>
+                    </div>
+                    <div class="col-sm-6 col-xs-6 col-md-4">
+                      <a href="" class="btn btn-info" data-toggle="modal" data-target="#remove-stock">
+                      	<p>Quitar</p>
+                      	<img style=" height: 40px; width: 60px;" src="img/remove.png">
+                      </a>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                    </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+
 
 	            <div class="col-sm-8 col-sm-offset-2 text-left">
 	                  <div class="row">
@@ -231,12 +238,14 @@ $( "#editar_producto" ).submit(function( event ) {
 			$("#resultados_ajax2").html(datos);
 			$('#actualizar_datos').attr("disabled", false);
 
-			window.setTimeout(function() {
-				$(".alert").fadeTo(500, 0).slideUp(500, function(){
-				$(this).remove();});
-				location.replace('stock.php');
-			}, 4000);
-		}
+			window.location.reload();
+			// window.setTimeout(function() {
+			// 	$(".alert").fadeTo(500, 0).slideUp(500, function(){
+			// 	$(this).remove();});
+			// 	location.replace('stock.php');
+			// }, 4000);
+		  }
+
 	});
   	event.preventDefault();
 	window.location.reload();

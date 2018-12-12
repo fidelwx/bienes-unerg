@@ -18,6 +18,7 @@
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="mod_codigo" name="mod_codigo" placeholder="Código del producto" required>
 					<input type="hidden" name="mod_id" id="mod_id">
+					<input type="hidden" value="<?php echo $_GET['id']; ?>" name="prod_id" id="prod_id">
 				</div>
 			  </div>
 			   <div class="form-group">

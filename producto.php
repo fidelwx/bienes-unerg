@@ -58,7 +58,7 @@
 	
 	if (isset($_GET['id'])){
 		$id_producto=intval($_GET['id']);
-		$query=mysqli_query($con,"select * from products where id_producto='$id_producto'");
+		$query=mysqli_query($con,"SELECT * FROM products JOIN categorias ON products.id_categoria =  categorias.id_categoria where id_producto='$id_producto'");
 		$row=mysqli_fetch_array($query);
 		
 	} else {
@@ -114,6 +114,9 @@
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                       <span class="item-number"><?php echo $row['codigo_producto'];?></span>
+                    </div>
+                    <div class="col-sm-12 margin-btm-10">
+                      <span class="item-title"><?php echo $row['nombre_categoria'];?></span>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>

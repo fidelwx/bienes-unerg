@@ -37,7 +37,7 @@
 
 				<!-- <a href="lista_productos_area_pdf.php" class="btn btn-warning"><span class="glyphicon glyphicon-pdf" ></span> PDF <small>(Bienes por area)</small></a> -->
 
-				<div class="btn-group">
+				<!-- <div class="btn-group">
 				  <button type="button" class="btn btn-danger"></span> PDF <small>(Bienes por area)</small></button>
 				 
 				  <button type="button" class="btn btn-danger dropdown-toggle"
@@ -52,7 +52,8 @@
 				    <li><a href="#">Acción #3</a></li>
 				    <li><a href="#">Acción #4</a></li>
 				  </ul>
-				</div>
+				</div> -->
+				
 			</div>
 			<h4><i class='glyphicon glyphicon-search'> </i> Consultar inventario </h4>
 		</div>
